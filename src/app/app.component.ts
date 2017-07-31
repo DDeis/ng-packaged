@@ -8,17 +8,25 @@ import { BarService } from '@my/lib';
 <my-foo></my-foo>
 <hr>
 <marquee>{{ value$ | async }}</marquee>
+<pre>{{ identity | json }}</pre>
+<pre>{{ serialized | json }}</pre>
 `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
-  value$: Observable<string>;
-
-  constructor (
-    bar: BarService
-  ) {
-     this.value$ = bar.value;
+  get value$(): Observable<string> {
+    return this.bar.value;
   }
+
+  get identity() {
+    return this.bar.lodashIdentity({toto: 'tutu'});
+  }
+
+  get serialized() {
+    return this.bar.ctSerialize({ foo: 'bar' });
+  }
+
+  constructor(private bar: BarService) {}
 
 }

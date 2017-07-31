@@ -6,7 +6,9 @@
   "license": "MIT",
   "private": true,
   "peerDependencies": {
+    "@angular/common": "^4.1.2",
     "@angular/core": "^4.1.2",
-    "@angular/common": "^4.1.2"
+    "class-transformer": "^0.1.7",
+    "lodash": "^4.17.4"
   }
 }

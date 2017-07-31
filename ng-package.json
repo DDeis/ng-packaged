@@ -4,6 +4,10 @@
   "dest": "dist/my-lib",
   "workingDirectory": ".ng_build",
   "lib": {
-    "entryFile": "src/public_api.ts"
+    "entryFile": "src/public_api.ts",
+    "externals": {
+      "class-transformer/index": "class-transformer",
+      "lodash": "lodash"
+    }
   }
 }
